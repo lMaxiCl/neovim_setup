@@ -1,0 +1,3 @@
+require("maxic")
+print("hello");
+
