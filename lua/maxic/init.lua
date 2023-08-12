@@ -1,3 +1,2 @@
 require("maxic.remap")
-print("Hello from maxic directory")
-
+require("maxic.set")

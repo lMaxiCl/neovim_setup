@@ -1,3 +1,1 @@
 require("maxic")
-print("hello");
-
