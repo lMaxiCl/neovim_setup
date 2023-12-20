@@ -76,8 +76,8 @@
 - Open Fugitive (Git): Press space, then type `gs`
 
 ## Search
-- Search (Forward): Press space, then type `ff`
-- Search (Backward): Press space, then type `af`
+- Search : Press space, then type `ff`
+- Search other solution: Press space, then type `af`
 
 ## Autocompletion Selection
 - Confirm Autocompletion: Press `Ctrl` + `y`
