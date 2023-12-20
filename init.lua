@@ -1,1 +1,1 @@
-require("maxic")
+require("init")
