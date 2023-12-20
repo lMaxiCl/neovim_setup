@@ -83,6 +83,9 @@
 - Confirm Autocompletion: Press `Ctrl` + `y`
 
 ## Error Message Viewer
+- Start debugger/continue: Press space, then type `d`
+- Toggle debugger breakpoint: Type `ff`
+- Make debugger step: Press space, then type `j`
 - View Error Messages: Press `gl`
 
 Feel free to reach out if you have any questions or need assistance!
