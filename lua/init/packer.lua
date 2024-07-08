@@ -4,14 +4,35 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
 	use({ "wesleimp/stylua.nvim" })
 
 	use({ "ellisonleao/gruvbox.nvim" })
 
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
 	use("folke/neodev.nvim")
+
+	--use({ "github/copilot.vim", branch = "release" })
+	use({
+		"Exafunction/codeium.vim",
+		dependencies = {
+			"hrsh7th/nvim-cmp",
+		},
+		commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2",
+	})
+
+	use({
+		"stevearc/oil.nvim",
+		config = function()
+			require("oil").setup()
+		end,
+	})
 
 	use({
 		"neanias/everforest-nvim",
@@ -32,7 +53,7 @@ return require("packer").startup(function(use)
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
+		branch = "v3.x",
 		requires = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
@@ -46,10 +67,39 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	use("nvim-tree/nvim-web-devicons")
+
+	use({
+		"folke/trouble.nvim",
+		command = "Trouble",
+		opts = {
+			icons = false,
+			fold_open = "v", -- icon used for open folds
+			fold_closed = ">", -- icon used for closed folds
+			indent_lines = false, -- add an indent guide below the fold icons
+			signs = {
+				-- icons / text used for a diagnostic
+				error = "error",
+				warning = "warn",
+				hint = "hint",
+				information = "info",
+			},
+			use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
+		},
+	})
+
 	--DAP
 	--use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use({ "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } })
 	use("leoluz/nvim-dap-go")
+	-- alternative go debugger
+	-- use("fatih/vim-go")
+	use({
+		"pcolladosoto/tinygo.nvim",
+		config = function()
+			require("tinygo").setup()
+		end,
+	})
 
 	use({
 		"akinsho/flutter-tools.nvim",
